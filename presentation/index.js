@@ -69,11 +69,11 @@ export default class Presentation extends React.Component {
               <Text textColor="tertiary">View on Github</Text>
             </Link>
           </Slide>
-          <Slide>
-            <Heading size={1} lineHeight={1}>
+          <Slide bgColor="secondary">
+            <Heading size={1} textColor="primary" lineHeight={1}>
               Universal JavaScript
             </Heading>
-            <List textColor="secondary">
+            <List textColor="tertiary">
               <ListItem>What is it?</ListItem>
               <ListItem>Why use it?</ListItem>
               <ListItem>How to implement it (with React)</ListItem>
@@ -90,11 +90,11 @@ export default class Presentation extends React.Component {
             </Heading>
             <Text textColor="tertiary">Code that generates HTML for the browser</Text>
           </Slide>
-          <Slide>
-            <Heading size={1} lineHeight={1}>
+          <Slide bgColor="secondary">
+            <Heading size={1} textColor="primary" lineHeight={1}>
               Rendering
             </Heading>
-            <List textColor="secondary">
+            <List textColor="tertiary">
               <ListItem>Server-side</ListItem>
               <ListItem>Client-side</ListItem>
             </List>
@@ -122,25 +122,25 @@ export default class Presentation extends React.Component {
               Why?
             </Heading>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={2} textColor="primary">
               Previous blocks
             </Heading>
-            <Text>Rendring done in different programming environments, usually in different languages</Text>
+            <Text textColor="tertiary">Rendring done in different programming environments, usually in different languages</Text>
           </Slide>
-          <Slide>
-            <Heading size={1} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={1} textColor="primary">
               Node.js
             </Heading>
             <Appear>
-              <Text>Same programming environment and language </Text>
+              <Text textColor="tertiary">Same programming environment and language </Text>
             </Appear>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={2} textColor="primary">
               Performance benefits
             </Heading>
-            <List textColor="secondary">
+            <List textColor="tertiary">
               <AppearListItem>No flash of blank content</AppearListItem>
               <AppearListItem>Fast and light rendering (ref mobile)</AppearListItem>
               <AppearListItem>Easy caching</AppearListItem>
@@ -149,17 +149,17 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide>
             <Heading size={2} textColor="secondary">
-              Please robots
+              Please robots/cravlers
             </Heading>
             <Appear>
               <Image width="50%" src={images.share}/>
             </Appear>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={2} textColor="primary">
               Problems
             </Heading>
-            <List textColor="secondary">
+            <List textColor="tertiary">
               <AppearListItem>Overhead</AppearListItem>
               <AppearListItem>Do you need it?</AppearListItem>
             </List>
@@ -170,18 +170,18 @@ export default class Presentation extends React.Component {
               How
             </Heading>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={2} textColor="primary">
               Main challenges
             </Heading>
-            <List textColor="secondary">
+            <List textColor="tertiary">
               <AppearListItem>Rendering</AppearListItem>
               <AppearListItem>Routing</AppearListItem>
               <AppearListItem>Loading async data</AppearListItem>
             </List>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
+          <Slide bgColor="secondary">
+            <Heading size={2} textColor="primary">
               Rendering
             </Heading>
             <Text textColor="tertiary">Easy (if you use React)</Text>
@@ -213,10 +213,10 @@ export default class Presentation extends React.Component {
               <AppearListItem>react-router</AppearListItem>
             </List>
           </Slide>
-          <Slide bgColor="primary">
+          <Slide>
             <CodePane lang="js" source={require("raw!../assets/routing.example")} margin="20px auto" />
           </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="primary">
+          <Slide transition={["spin", "slide"]}>
             <Heading size={1} caps fit lineHeight={1.5} textColor="secondary">
               That's all folks
             </Heading>
