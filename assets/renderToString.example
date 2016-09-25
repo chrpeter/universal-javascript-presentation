@@ -1,0 +1,5 @@
+import { renderToString } from 'react-dom/server';
+
+const props = { hello: 'hello' };
+
+renderToString(<App {...props} />)

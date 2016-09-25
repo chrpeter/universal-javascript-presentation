@@ -33,7 +33,8 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   serverSideRendering: require("../assets/server-side-rendering.png"),
-  clientSideRendering: require("../assets/client-side-rendering.png")
+  clientSideRendering: require("../assets/client-side-rendering.png"),
+  share: require("../assets/share.png")
 };
 
 preloader(images);
@@ -61,27 +62,42 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1}>
               Universal JavaScript
             </Heading>
-            <Heading size={1} fit textColor="secondary">
+            <Heading size={2} textColor="secondary">
               Server-side rendering
             </Heading>
             <Link href="https://github.com/oyvinmar/ssr-presentation">
               <Text textColor="tertiary">View on Github</Text>
             </Link>
           </Slide>
-          <Slide transition={["slide"]} bgColor="secondary">
-            <Heading size={1}>
-              Rendering
+          <Slide>
+            <Heading size={1} lineHeight={1}>
+              Universal JavaScript
             </Heading>
-            <BlockQuote>
-              <Quote>Code that generates HTML</Quote>
-              <Cite>Me</Cite>
-            </BlockQuote>
+            <List textColor="secondary">
+              <ListItem>What is it?</ListItem>
+              <ListItem>Why use it?</ListItem>
+              <ListItem>How to implement it (with React)</ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
+              Background
+            </Heading>
           </Slide>
           <Slide bgColor="secondary">
-            <Heading size={4} textColor="primary" textFont="primary">
+            <Heading size={2} textColor="primary" textFont="primary" lineHeight={2}>
               Rendering
             </Heading>
-            <Text textColor="tertiary">Code that generates HTML</Text>
+            <Text textColor="tertiary">Code that generates HTML for the browser</Text>
+          </Slide>
+          <Slide>
+            <Heading size={1} lineHeight={1}>
+              Rendering
+            </Heading>
+            <List textColor="secondary">
+              <ListItem>Server-side</ListItem>
+              <ListItem>Client-side</ListItem>
+            </List>
           </Slide>
           <Slide>
             <Heading size={2} textColor="secondary">
@@ -95,26 +111,107 @@ export default class Presentation extends React.Component {
             </Heading>
             <Image width="100%" src={images.clientSideRendering}/>
           </Slide>
-          <Slide bgColor="tertiary">
+          <Slide>
             <Heading size={2} textColor="secondary">
-              Example (bfa)
+              Universal rendering
+            </Heading>
+            <Image width="100%" src={images.clientSideRendering}/>
+          </Slide>
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
+              Why?
+            </Heading>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Previous blocks
+            </Heading>
+            <Text>Rendring done in different programming environments, usually in different languages</Text>
+          </Slide>
+          <Slide>
+            <Heading size={1} textColor="secondary">
+              Node.js
+            </Heading>
+            <Appear>
+              <Text>Same programming environment and language </Text>
+            </Appear>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Performance benefits
+            </Heading>
+            <List textColor="secondary">
+              <AppearListItem>No flash of blank content</AppearListItem>
+              <AppearListItem>Fast and light rendering (ref mobile)</AppearListItem>
+              <AppearListItem>Easy caching</AppearListItem>
+              <AppearListItem>All the benefits of SPA</AppearListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Please robots
+            </Heading>
+            <Appear>
+              <Image width="50%" src={images.share}/>
+            </Appear>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Problems
+            </Heading>
+            <List textColor="secondary">
+              <AppearListItem>Overhead</AppearListItem>
+              <AppearListItem>Do you need it?</AppearListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
+              How
             </Heading>
           </Slide>
           <Slide>
             <Heading size={2} textColor="secondary">
               Main challenges
             </Heading>
-              <List textColor="secondary">
-                <AppearListItem>Rendering</AppearListItem>
-                <AppearListItem>Routing</AppearListItem>
-                <AppearListItem>Loading async data</AppearListItem>
-              </List>
+            <List textColor="secondary">
+              <AppearListItem>Rendering</AppearListItem>
+              <AppearListItem>Routing</AppearListItem>
+              <AppearListItem>Loading async data</AppearListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Rendering
+            </Heading>
+            <Text textColor="tertiary">Easy (if you use React)</Text>
+          </Slide>
+          <Slide>
+            <Heading size={4} textColor="secondary">
+              ReactDOMServer.renderToString
+            </Heading>
+            <Code size={3}>string renderToString(ReactElement element)</Code>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="secondary">
+            <BlockQuote>
+              <Quote>Render a ReactElement to its initial HTML.</Quote>
+              <Cite>React docs</Cite>
+            </BlockQuote>
           </Slide>
           <Slide bgColor="primary">
             <Heading size={6} textColor="secondary" textFont="primary">
               Render to string
             </Heading>
-            <Code bgColor="primary" textColor="tertiary">{`renderToString(<App {...renderProps} />)`}</Code>
+            <CodePane lang="js" source={require("raw!../assets/renderToString.example")} margin="20px auto" />
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Routing
+            </Heading>
+            <List textColor="secondary">
+              <AppearListItem>react-router</AppearListItem>
+            </List>
           </Slide>
           <Slide bgColor="primary">
             <CodePane lang="js" source={require("raw!../assets/routing.example")} margin="20px auto" />
