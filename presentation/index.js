@@ -97,6 +97,7 @@ export default class Presentation extends React.Component {
             <List textColor="tertiary">
               <ListItem>Server-side</ListItem>
               <ListItem>Client-side</ListItem>
+              <ListItem>Both</ListItem>
             </List>
           </Slide>
           <Slide>
@@ -119,22 +120,13 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide>
             <Heading size={1} fit textColor="secondary">
+              Demo
+            </Heading>
+          </Slide>
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
               Why?
             </Heading>
-          </Slide>
-          <Slide bgColor="secondary">
-            <Heading size={2} textColor="primary">
-              Previous blocks
-            </Heading>
-            <Text textColor="tertiary">Rendring done in different programming environments, usually in different languages</Text>
-          </Slide>
-          <Slide bgColor="secondary">
-            <Heading size={1} textColor="primary">
-              Node.js
-            </Heading>
-            <Appear>
-              <Text textColor="tertiary">Same programming environment and language </Text>
-            </Appear>
           </Slide>
           <Slide bgColor="secondary">
             <Heading size={2} textColor="primary">
@@ -142,32 +134,63 @@ export default class Presentation extends React.Component {
             </Heading>
             <List textColor="tertiary">
               <AppearListItem>No flash of blank content</AppearListItem>
-              <AppearListItem>Fast and light rendering (ref mobile)</AppearListItem>
+              <AppearListItem>Fast and light rendering (mobile friendly)</AppearListItem>
               <AppearListItem>Easy caching</AppearListItem>
               <AppearListItem>All the benefits of SPA</AppearListItem>
             </List>
           </Slide>
           <Slide>
             <Heading size={2} textColor="secondary">
-              Please robots/cravlers
+              SEO
             </Heading>
+            <Appear>
+              <Heading size={4} textColor="tertiary">
+                Pleasing robots and crawlers
+              </Heading>
+            </Appear>
             <Appear>
               <Image width="50%" src={images.share}/>
             </Appear>
           </Slide>
           <Slide bgColor="secondary">
             <Heading size={2} textColor="primary">
-              Problems
+              N.B! You need a reason
             </Heading>
             <List textColor="tertiary">
-              <AppearListItem>Overhead</AppearListItem>
-              <AppearListItem>Do you need it?</AppearListItem>
+              <AppearListItem>Added complexity</AppearListItem>
+              <AppearListItem>More testing needed</AppearListItem>
             </List>
           </Slide>
-
           <Slide>
             <Heading size={1} fit textColor="secondary">
-              How
+              How?
+            </Heading>
+          </Slide>
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
+              Why now?
+            </Heading>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Before rendring was always done in different programming environments, usually in different languages</Text>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} textColor="primary" lineHeight={2}>
+              Node.js
+            </Heading>
+            <Appear>
+              <Text textColor="tertiary">Run JavaScript everywhere!</Text>
+            </Appear>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Same code running in different environments</Text>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Reuse up to 99% (ish) of your code</Text>
+          </Slide>
+          <Slide>
+            <Heading size={1} fit textColor="secondary">
+              Universal JavaScript
             </Heading>
           </Slide>
           <Slide bgColor="secondary">
