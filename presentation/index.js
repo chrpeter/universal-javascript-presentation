@@ -19,6 +19,7 @@ import {
   Spectacle,
   Text
 } from "spectacle";
+import CodeSlide from "spectacle-code-slide";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -239,6 +240,23 @@ export default class Presentation extends React.Component {
           <Slide>
             <CodePane lang="js" source={require("raw!../assets/routing.example")} margin="20px auto" />
           </Slide>
+          <CodeSlide
+            lang="js"
+            transition={[]}
+            code={require("raw!../assets/routing.example")}
+            ranges={[
+              { loc: [0, 200], title: "Routing flow" },
+              { loc: [1, 2], note: "Import react-router dependencies" },
+              { loc: [2, 3], note: "Import our shared routes" },
+              { loc: [4, 5], note: "Accept any request" },
+              { loc: [5, 6], note: "Match route to component and provide callback" },
+              { loc: [6, 8], note: "Something went badly wrong, so 500 with a message" },
+              { loc: [8, 10], note: "We matched a ReactRouter redirect, so redirect from the server" },
+              { loc: [10, 12], note: "If we got props, that means we found a valid component to render for the given route" },
+              { loc: [11, 13], note: "Render `index` (template), but pass in the markup we want it to display" },
+              { loc: [13, 16], note: "No route match, so 404." }
+            ]}
+          />
           <Slide transition={["spin", "slide"]}>
             <Heading size={1} caps fit lineHeight={1.5} textColor="secondary">
               That's all folks
