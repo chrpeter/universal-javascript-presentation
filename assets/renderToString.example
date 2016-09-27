@@ -1,5 +1,17 @@
+import React from 'react';
 import { renderToString } from 'react-dom/server';
 
-const props = { hello: 'hello' };
+class App extends Component {
+  render() {
+    const { name } = this.props;
+    return (
+      <h1>Hello, {name}</h1>
+    );
+  }
+}
+
+const props = { name: 'The Web Chapter' };
 
 renderToString(<App {...props} />)
+
+// `<h1>Hello, The Web Chapter</h1>`

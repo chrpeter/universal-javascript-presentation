@@ -228,6 +228,18 @@ export default class Presentation extends React.Component {
             </Heading>
             <CodePane lang="js" source={require("raw!../assets/renderToString.example")} margin="20px auto" />
           </Slide>
+          <CodeSlide
+            lang="js"
+            transition={[]}
+            code={require("raw!../assets/renderToString.example")}
+            ranges={[
+              { loc: [0, 200], title: "Render to string" },
+              { loc: [1, 2], note: "Import renderToString" },
+              { loc: [3, 12], note: "Simple component" },
+              { loc: [12, 15], note: "Provide props and render to string" },
+              { loc: [16, 17], note: "String output" }
+            ]}
+          />
 
           <Slide>
             <Heading size={2} textColor="secondary">
