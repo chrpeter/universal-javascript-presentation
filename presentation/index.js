@@ -201,7 +201,7 @@ export default class Presentation extends React.Component {
             <List textColor="tertiary">
               <AppearListItem>Rendering</AppearListItem>
               <AppearListItem>Routing</AppearListItem>
-              <AppearListItem>Loading async data</AppearListItem>
+              <AppearListItem>Data fetching</AppearListItem>
             </List>
           </Slide>
           <Slide bgColor="secondary">
@@ -246,7 +246,9 @@ export default class Presentation extends React.Component {
               Routing
             </Heading>
             <List textColor="secondary">
-              <AppearListItem>react-router</AppearListItem>
+              <AppearListItem>Match url to component</AppearListItem>
+              <AppearListItem>Rendered component and wrapp it in html</AppearListItem>
+              <AppearListItem>Send html to client</AppearListItem>
             </List>
           </Slide>
           <Slide>
@@ -267,6 +269,59 @@ export default class Presentation extends React.Component {
               { loc: [10, 12], note: "If we got props, that means we found a valid component to render for the given route" },
               { loc: [11, 13], note: "Render `index` (template), but pass in the markup we want it to display" },
               { loc: [13, 16], note: "No route match, so 404." }
+            ]}
+          />
+
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Data fetching
+            </Heading>
+            <Appear>
+              <Text textColor="tertiary">Need to work on both client and server.</Text>
+            </Appear>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Data fetching on client is async.</Text>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Only fetch data we need to render one page.</Text>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Text textColor="tertiary">Can't call render to string before all calls are finished</Text>
+          </Slide>
+          <Slide>
+            <Heading size={2} textColor="secondary">
+              Multiple solutions
+            </Heading>
+            <List textColor="secondary">
+              <AppearListItem>Static methods in components</AppearListItem>
+              <AppearListItem>Add redux middleware</AppearListItem>
+              <AppearListItem>Use redux-saga</AppearListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={2} fit textColor="secondary">
+              Redux makes it a lot simpler
+            </Heading>
+            <List textColor="secondary">
+              <AppearListItem>Pass state with props way down the react component tree</AppearListItem>
+              <AppearListItem>Convenient API for dumping and restoring store state</AppearListItem>
+              <AppearListItem>Recreate store on every request</AppearListItem>
+            </List>
+          </Slide>
+          <CodeSlide
+            lang="js"
+            transition={[]}
+            code={require("raw!../assets/staticDataFetching.example")}
+            ranges={[
+              { loc: [0, 200], title: "Static data fetching" },
+              { loc: [1, 4], note: "Add static data fetching method returning a promise" },
+              { loc: [5, 8], note: "componentDidMounth is not called on renderToString" },
+              { loc: [10, 16], note: "Use redux to inject state as props" },
+              { loc: [21, 22], note: "Initiate data fetching and wait for all promises to resolve" },
+              { loc: [22, 25], note: "Create initial state and configure store" },
+              { loc: [25, 30], note: "renderToString with provided store" },
+              { loc: [30, 31], note: "Send HTML to client" }
             ]}
           />
           <Slide transition={["spin", "slide"]}>

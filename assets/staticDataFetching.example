@@ -1,0 +1,33 @@
+class ArticlePage extends Component {
+  static fetchData(id) {
+    return api.fetchArticle(`/article/${id}`)
+  }
+
+  componentDidMount() {
+    this.fetchData(this.props.id)
+  }
+
+  render() {
+    <Article article={this.props.article}/>
+  }
+}
+
+export default connect(mapStateToProps)(ArticlePage)
+
+
+
+match({ routes, location: req.url }, (error, redirect, renderProps) => {
+  ...
+} else if (renderProps) {
+  Promise.all(renderProps.components.map(c => c.fetchData()))
+    .then((values) => {
+      const state = createInitialState(values)
+      const store = configureStore(state);
+      const markup = renderToString(
+        <Provider store={store}>
+          <RoutingContext {...props} />
+        </Provider>
+      );
+      res.render('index', { markup })
+  })
+}
