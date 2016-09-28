@@ -63,9 +63,6 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1}>
               Universal JavaScript
             </Heading>
-            <Heading size={2} textColor="secondary">
-              Server-side rendering
-            </Heading>
             <Link href="https://github.com/oyvinmar/ssr-presentation">
               <Text textColor="tertiary">View on Github</Text>
             </Link>
@@ -93,7 +90,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide bgColor="secondary">
             <Heading size={1} textColor="primary" lineHeight={1}>
-              Rendering
+              Render where?
             </Heading>
             <List textColor="tertiary">
               <ListItem>Server-side</ListItem>
@@ -120,9 +117,12 @@ export default class Presentation extends React.Component {
             <Image width="100%" src={images.clientSideRendering}/>
           </Slide>
           <Slide>
-            <Heading size={1} fit textColor="secondary">
+            <Heading size={1} textColor="secondary" lineHeight="1.5">
               Demo
             </Heading>
+            <Link href="http://api.test.ndla.no:8082/article/300">
+              <Text textColor="tertiary">ndla-frontend</Text>
+            </Link>
           </Slide>
           <Slide>
             <Heading size={1} fit textColor="secondary">
@@ -155,11 +155,12 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide bgColor="secondary">
             <Heading size={2} textColor="primary">
-              N.B! You need a reason
+              Don't do it for fun
             </Heading>
             <List textColor="tertiary">
-              <AppearListItem>Added complexity</AppearListItem>
+              <AppearListItem>Harder to reason about code and more complexity</AppearListItem>
               <AppearListItem>More testing needed</AppearListItem>
+              <AppearListItem>May not always be the best user experience</AppearListItem>
             </List>
           </Slide>
           <Slide>
