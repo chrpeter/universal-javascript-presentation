@@ -95,15 +95,9 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide>
-            <Heading size={2} textColor="secondary">
-              Server-side rendering
-            </Heading>
             <Image width="100%" src={images.serverSideRendering}/>
           </Slide>
-          <Slide>
-            <Heading size={2} textColor="secondary">
-              Client-side rendering
-            </Heading>
+          <Slide paddingTop="0">
             <Image width="100%" src={images.clientSideRendering}/>
           </Slide>
           <Slide>
