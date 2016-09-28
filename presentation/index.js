@@ -4,17 +4,13 @@ import React from "react";
 // Import Spectacle Core tags
 import {
   Appear,
-  BlockQuote,
-  Cite,
   CodePane,
   Deck,
   Heading,
-  Code,
   Image,
   Link,
   ListItem,
   List,
-  Quote,
   Slide,
   Spectacle,
   Text
@@ -212,22 +208,13 @@ export default class Presentation extends React.Component {
             <Text textColor="tertiary">Easy (if you use React)</Text>
           </Slide>
           <Slide>
-            <Heading size={4} textColor="secondary">
+            <Heading size={4} textColor="secondary" lineHeight="2">
               ReactDOMServer.renderToString
             </Heading>
-            <Code size={3}>string renderToString(ReactElement element)</Code>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="secondary">
-            <BlockQuote>
-              <Quote>Render a ReactElement to its initial HTML.</Quote>
-              <Cite>React docs</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide bgColor="primary">
-            <Heading size={6} textColor="secondary" textFont="primary">
-              Render to string
-            </Heading>
-            <CodePane lang="js" source={require("raw!../assets/renderToString.example")} margin="20px auto" />
+            <CodePane lang="js" source={`string renderToString(ReactElement element)`} margin="20px auto" />
+            <Appear>
+              <Text textColor="tertiary">Render a React Element to its initial HTML.</Text>
+            </Appear>
           </Slide>
           <CodeSlide
             lang="js"
@@ -248,12 +235,9 @@ export default class Presentation extends React.Component {
             </Heading>
             <List textColor="secondary">
               <AppearListItem>Match url to component</AppearListItem>
-              <AppearListItem>Rendered component and wrapp it in html</AppearListItem>
+              <AppearListItem>Rendered component and wrap it in html</AppearListItem>
               <AppearListItem>Send html to client</AppearListItem>
             </List>
-          </Slide>
-          <Slide>
-            <CodePane lang="js" source={require("raw!../assets/routing.example")} margin="20px auto" />
           </Slide>
           <CodeSlide
             lang="js"
