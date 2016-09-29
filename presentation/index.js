@@ -303,9 +303,22 @@ export default class Presentation extends React.Component {
               { loc: [30, 31], note: "Send HTML to client" }
             ]}
           />
+          <CodeSlide
+            lang="js"
+            transition={[]}
+            code={require("raw!../assets/sagaDataFetching.example")}
+            ranges={[
+              { loc: [0, 200], title: "redux-saga" },
+              { loc: [1, 6], note: "componentWillMount is called on renderToString" },
+              { loc: [17, 22], note: "Configure store and assign provider to a variabel" },
+              { loc: [22, 24], note: "Run sagas until all started sagas has ended" },
+              { loc: [28, 29], note: "Call renderToString to start required sagas" },
+              { loc: [24, 27], note: "Render to string again." }
+            ]}
+          />
           <Slide transition={["spin", "slide"]}>
             <Heading size={1} caps fit lineHeight={1.5} textColor="secondary">
-              That's all folks
+              Questions?
             </Heading>
           </Slide>
         </Deck>
