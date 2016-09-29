@@ -59,7 +59,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1}>
               Universal JavaScript
             </Heading>
-            <Link href="https://github.com/oyvinmar/ssr-presentation">
+            <Link href="https://github.com/oyvinmar/universal-javascript-presentation">
               <Text textColor="tertiary">View on Github</Text>
             </Link>
           </Slide>
