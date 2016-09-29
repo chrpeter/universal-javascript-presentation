@@ -1,0 +1,29 @@
+class ArticlePage extends Component {
+  componentWillMount() {
+    const { fetchArticle, params: { articleId } } = this.props;
+    fetchArticle(articleId);
+  }
+
+  render() {
+    <Article article={this.props.article}/>
+  }
+}
+
+export default connect(mapStateToProps)(ArticlePage)
+
+
+match({ routes, location: req.url }, (error, redirect, renderProps) => {
+  ...
+} else if (renderProps) {
+  const store = configureStore(state);
+  const component = (<Provider store={store}>
+          <RoutingContext {...renderProps} />
+        </Provider>);
+
+  store.runSaga(rootSaga).done
+    .then(() => {
+      const markup = renderToString(component);
+      res.render('index', { markup })
+  });
+  renderToString(component);
+}

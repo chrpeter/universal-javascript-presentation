@@ -31,6 +31,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   serverSideRendering: require("../assets/server-side-rendering.png"),
   clientSideRendering: require("../assets/client-side-rendering.png"),
+  universalRendering: require("../assets/universal-rendering.png"),
   share: require("../assets/share.png")
 };
 
@@ -59,7 +60,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1}>
               Universal JavaScript
             </Heading>
-            <Link href="https://github.com/oyvinmar/ssr-presentation">
+            <Link href="https://github.com/oyvinmar/universal-javascript-presentation">
               <Text textColor="tertiary">View on Github</Text>
             </Link>
           </Slide>
@@ -91,26 +92,32 @@ export default class Presentation extends React.Component {
             <List textColor="tertiary">
               <ListItem>Server-side</ListItem>
               <ListItem>Client-side</ListItem>
-              <ListItem>Both</ListItem>
+              <ListItem>Both sides</ListItem>
             </List>
           </Slide>
           <Slide>
+            <Heading size={5} textColor="secondary">
+              Server-side rendering
+            </Heading>
             <Image width="100%" src={images.serverSideRendering}/>
           </Slide>
           <Slide paddingTop="0">
+            <Heading size={6} textColor="secondary">
+              Client-side rendering
+            </Heading>
             <Image width="100%" src={images.clientSideRendering}/>
           </Slide>
           <Slide>
-            <Heading size={2} textColor="secondary">
+            <Heading size={5} textColor="secondary">
               Universal rendering
             </Heading>
-            <Image width="100%" src={images.clientSideRendering}/>
+            <Image width="100%" src={images.universalRendering}/>
           </Slide>
           <Slide>
             <Heading size={1} textColor="secondary" lineHeight="1.5">
               Demo
             </Heading>
-            <Link href="http://api.test.ndla.no:8082/article/300">
+            <Link href="http://api.staging.ndla.no:8082/article/130">
               <Text textColor="tertiary">ndla-frontend</Text>
             </Link>
           </Slide>
@@ -164,7 +171,7 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
           <Slide bgColor="secondary">
-            <Text textColor="tertiary">Before rendring was always done in different programming environments, usually in different languages</Text>
+            <Text textColor="tertiary">Before rendering was always done in different programming environments, usually in different languages.</Text>
           </Slide>
           <Slide bgColor="secondary">
             <Heading size={1} textColor="primary" lineHeight={2}>
@@ -175,10 +182,10 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
           <Slide bgColor="secondary">
-            <Text textColor="tertiary">Same code running in different environments</Text>
+            <Text textColor="tertiary">Same code running in different environments.</Text>
           </Slide>
           <Slide bgColor="secondary">
-            <Text textColor="tertiary">Reuse up to 99% (ish) of your code</Text>
+            <Text textColor="tertiary">Reuse up to 99% (ish) of your code.</Text>
           </Slide>
           <Slide>
             <Heading size={1} fit textColor="secondary">
@@ -219,7 +226,7 @@ export default class Presentation extends React.Component {
               { loc: [1, 2], note: "Import renderToString" },
               { loc: [3, 12], note: "Simple component" },
               { loc: [12, 15], note: "Provide props and render to string" },
-              { loc: [16, 17], note: "String output" }
+              { loc: [16, 17], note: "String output." }
             ]}
           />
 
@@ -266,7 +273,7 @@ export default class Presentation extends React.Component {
             <Text textColor="tertiary">Only fetch data we need to render one page.</Text>
           </Slide>
           <Slide bgColor="secondary">
-            <Text textColor="tertiary">Can't call render to string before all calls are finished</Text>
+            <Text textColor="tertiary">Can't call render to string before all calls are finished.</Text>
           </Slide>
           <Slide>
             <Heading size={2} textColor="secondary">
@@ -295,17 +302,30 @@ export default class Presentation extends React.Component {
             ranges={[
               { loc: [0, 200], title: "Static data fetching" },
               { loc: [1, 4], note: "Add static data fetching method returning a promise" },
-              { loc: [5, 8], note: "componentDidMounth is not called on renderToString" },
-              { loc: [10, 16], note: "Use redux to inject state as props" },
-              { loc: [21, 22], note: "Initiate data fetching and wait for all promises to resolve" },
+              { loc: [5, 8], note: "componentDidMount is not called on renderToString" },
+              { loc: [9, 16], note: "Use redux to inject state as props" },
+              { loc: [21, 23], note: "Initiate data fetching and wait for all promises to resolve" },
               { loc: [22, 25], note: "Create initial state and configure store" },
               { loc: [25, 30], note: "renderToString with provided store" },
               { loc: [30, 31], note: "Send HTML to client" }
             ]}
           />
+          <CodeSlide
+            lang="js"
+            transition={[]}
+            code={require("raw!../assets/sagaDataFetching.example")}
+            ranges={[
+              { loc: [0, 200], title: "redux-saga" },
+              { loc: [1, 6], note: "componentWillMount is called on renderToString" },
+              { loc: [17, 22], note: "Configure store and assign provider to a variable" },
+              { loc: [22, 24], note: "Run sagas until all started sagas has ended" },
+              { loc: [27, 28], note: "Call renderToString to start required sagas" },
+              { loc: [24, 26], note: "Render to string again." }
+            ]}
+          />
           <Slide transition={["spin", "slide"]}>
             <Heading size={1} caps fit lineHeight={1.5} textColor="secondary">
-              That's all folks
+              Questions?
             </Heading>
           </Slide>
         </Deck>

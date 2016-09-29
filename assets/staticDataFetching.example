@@ -25,7 +25,7 @@ match({ routes, location: req.url }, (error, redirect, renderProps) => {
       const store = configureStore(state);
       const markup = renderToString(
         <Provider store={store}>
-          <RoutingContext {...props} />
+          <RoutingContext {...renderProps} />
         </Provider>
       );
       res.render('index', { markup })

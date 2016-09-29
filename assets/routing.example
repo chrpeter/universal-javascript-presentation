@@ -9,7 +9,7 @@ app.get('*', (req, res) => {
     } else if (redirectLocation) {
       res.redirect(302, redirect.pathname + redirect.search)
     } else if (renderProps) {
-      const markup = renderToString(<RoutingContext {...props} />);
+      const markup = renderToString(<RoutingContext {...renderProps} />);
       res.render('index', { markup })
     } else {
       res.status(404).send('Not found')
