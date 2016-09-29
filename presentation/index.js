@@ -31,6 +31,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   serverSideRendering: require("../assets/server-side-rendering.png"),
   clientSideRendering: require("../assets/client-side-rendering.png"),
+  universalRendering: require("../assets/universal-rendering.png"),
   share: require("../assets/share.png")
 };
 
@@ -95,16 +96,22 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
           <Slide>
+            <Heading size={5} textColor="secondary">
+              Server-side rendering
+            </Heading>
             <Image width="100%" src={images.serverSideRendering}/>
           </Slide>
           <Slide paddingTop="0">
+            <Heading size={6} textColor="secondary">
+              Client-side rendering
+            </Heading>
             <Image width="100%" src={images.clientSideRendering}/>
           </Slide>
           <Slide>
-            <Heading size={2} textColor="secondary">
+            <Heading size={5} textColor="secondary">
               Universal rendering
             </Heading>
-            <Image width="100%" src={images.clientSideRendering}/>
+            <Image width="100%" src={images.universalRendering}/>
           </Slide>
           <Slide>
             <Heading size={1} textColor="secondary" lineHeight="1.5">
