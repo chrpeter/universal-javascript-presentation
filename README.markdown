@@ -1,6 +1,6 @@
-# Redux presentation
+# Universal Javascript presentation
 
-A redux presentation using [Spectacle](https://github.com/FormidableLabs/spectacle/) (A React.js based library for creating sleek presentations using JSX syntax)
+A universal javascript presentation using [Spectacle](https://github.com/FormidableLabs/spectacle/) (A React.js based library for creating sleek presentations using JSX syntax)
 
 
 ## Development
