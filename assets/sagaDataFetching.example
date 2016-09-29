@@ -23,8 +23,7 @@ match({ routes, location: req.url }, (error, redirect, renderProps) => {
   store.runSaga(rootSaga).done
     .then(() => {
       const markup = renderToString(component);
-      const state = store.getState();
-      res.render('index', { markup, state: serialize(state) })
+      res.render('index', { markup })
   });
   renderToString(component);
 }

@@ -92,7 +92,7 @@ export default class Presentation extends React.Component {
             <List textColor="tertiary">
               <ListItem>Server-side</ListItem>
               <ListItem>Client-side</ListItem>
-              <ListItem>Both</ListItem>
+              <ListItem>Both sides</ListItem>
             </List>
           </Slide>
           <Slide>
@@ -117,7 +117,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} textColor="secondary" lineHeight="1.5">
               Demo
             </Heading>
-            <Link href="http://api.test.ndla.no:8082/article/300">
+            <Link href="http://api.staging.ndla.no:8082/article/130">
               <Text textColor="tertiary">ndla-frontend</Text>
             </Link>
           </Slide>
@@ -303,8 +303,8 @@ export default class Presentation extends React.Component {
               { loc: [0, 200], title: "Static data fetching" },
               { loc: [1, 4], note: "Add static data fetching method returning a promise" },
               { loc: [5, 8], note: "componentDidMount is not called on renderToString" },
-              { loc: [10, 16], note: "Use redux to inject state as props" },
-              { loc: [21, 22], note: "Initiate data fetching and wait for all promises to resolve" },
+              { loc: [9, 16], note: "Use redux to inject state as props" },
+              { loc: [21, 23], note: "Initiate data fetching and wait for all promises to resolve" },
               { loc: [22, 25], note: "Create initial state and configure store" },
               { loc: [25, 30], note: "renderToString with provided store" },
               { loc: [30, 31], note: "Send HTML to client" }
@@ -319,8 +319,8 @@ export default class Presentation extends React.Component {
               { loc: [1, 6], note: "componentWillMount is called on renderToString" },
               { loc: [17, 22], note: "Configure store and assign provider to a variable" },
               { loc: [22, 24], note: "Run sagas until all started sagas has ended" },
-              { loc: [28, 29], note: "Call renderToString to start required sagas" },
-              { loc: [24, 27], note: "Render to string again." }
+              { loc: [27, 28], note: "Call renderToString to start required sagas" },
+              { loc: [24, 26], note: "Render to string again." }
             ]}
           />
           <Slide transition={["spin", "slide"]}>
